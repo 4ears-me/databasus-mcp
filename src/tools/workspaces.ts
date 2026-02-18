@@ -1,6 +1,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { z } from 'zod';
 import { DatabasusClient } from '../client.js';
+import type { HealthCheck } from '../types.js';
 
 export function registerWorkspaceTools(server: McpServer, client: DatabasusClient): void {
   server.tool(
@@ -59,10 +60,11 @@ export function registerWorkspaceTools(server: McpServer, client: DatabasusClien
       databaseId: z.string().describe('Database ID'),
       limit: z.number().optional().default(10).describe('Maximum number of results to return'),
     },
-    async ({ databaseId, limit }) => {
+    async (params) => {
+      const { databaseId, limit = 10 } = params;
       try {
         const healthChecks = await client.getHealthChecks(databaseId);
-        const result = healthChecks.slice(0, limit).map(hc => ({
+        const result = healthChecks.slice(0, limit).map((hc: HealthCheck) => ({
           id: hc.id,
           status: hc.status,
           responseTimeMs: hc.responseTimeMs,
@@ -91,6 +93,11 @@ export function registerWorkspaceTools(server: McpServer, client: DatabasusClien
     async ({ databaseId }) => {
       try {
         const healthCheck = await client.getLatestHealthCheck(databaseId);
+        if (!healthCheck) {
+          return {
+            content: [{ type: 'text', text: JSON.stringify(null, null, 2) }],
+          };
+        }
         return {
           content: [{ type: 'text', text: JSON.stringify({
             id: healthCheck.id,
