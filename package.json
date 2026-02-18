@@ -1,0 +1,49 @@
+{
+  "name": "databasus-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for controlling Databasus database backup instances",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "databasus-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "mcp",
+    "databasus",
+    "database",
+    "backup",
+    "postgresql",
+    "mysql",
+    "mongodb",
+    "model-context-protocol",
+    "ai",
+    "claude"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.26.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4ears-me/databasus-mcp.git"
+  },
+  "homepage": "https://github.com/4ears-me/databasus-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/4ears-me/databasus-mcp/issues"
+  }
+}
