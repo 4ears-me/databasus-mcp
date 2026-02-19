@@ -4,11 +4,24 @@
 
 This repository provides an MCP (Model Context Protocol) server for controlling Databasus database backup instances. It exposes all relevant Databasus behaviors for agentic control, allowing AI assistants like Claude to manage database backups through natural language.
 
+## Workflow
+
+All changes must be made on a branch and submitted via a pull request:
+
+1. Create a new branch for your changes
+2. Make your changes on the branch
+3. Open a pull request targeting `main`
+4. Wait for CI checks to pass
+5. Get approval from a reviewer
+6. Merge the pull request
+
+Direct pushes to `main` are not allowed.
+
 ## Technology
 
 - **Language**: TypeScript
 - **Runtime**: Node.js 18+
-- **Execution**: npx (via `npx databasus-mcp`)
+- **Execution**: npx (via `npx @4ears-me/databasus-mcp`)
 - **Transport**: stdio (standard input/output)
 - **SDK**: @modelcontextprotocol/sdk v1.26.0
 
@@ -131,6 +144,12 @@ npm run dev
 
 # Run compiled server
 npm start
+
+# Run tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
 ```
 
 ## Security Notes
