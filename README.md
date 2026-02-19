@@ -22,13 +22,13 @@ An MCP (Model Context Protocol) server for controlling Databasus database backup
 ### Install via npm
 
 ```bash
-npm install -g databasus-mcp
+npm install -g @4ears-me/databasus-mcp
 ```
 
 ### Run directly with npx
 
 ```bash
-npx databasus-mcp
+npx @4ears-me/databasus-mcp
 ```
 
 ## Configuration
@@ -52,7 +52,7 @@ Add to your Claude Desktop configuration (`~/Library/Application Support/Claude/
   "mcpServers": {
     "databasus": {
       "command": "npx",
-      "args": ["databasus-mcp"],
+      "args": ["@4ears-me/databasus-mcp"],
       "env": {
         "DATABASUS_URL": "https://your-databasus-instance.com",
         "DATABASUS_API_KEY": "your-api-key"
@@ -117,6 +117,12 @@ npm run dev
 
 # Run the built server
 npm start
+
+# Run tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
 ```
 
 ## About Databasus
@@ -131,4 +137,4 @@ npm start
 
 ## License
 
-ISC
+MIT
