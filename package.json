@@ -1,5 +1,5 @@
 {
-  "name": "databasus-mcp",
+  "name": "@4ears-me/databasus-mcp",
   "version": "1.0.0",
   "description": "MCP server for controlling Databasus database backup instances",
   "main": "dist/index.js",
