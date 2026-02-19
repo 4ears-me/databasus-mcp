@@ -1,0 +1,11 @@
+{
+  "name": "databasus",
+  "transport": "stdio",
+  "description": "MCP server for controlling Databasus database backup instances",
+  "command": "npx",
+  "args": ["@4ears-me/databasus-mcp"],
+  "env": {
+    "DATABASUS_URL": "https://your-databasus-instance.com",
+    "DATABASUS_API_KEY": "your-api-key"
+  }
+}
